@@ -3,6 +3,7 @@ Cancancandodynamicacl::Application.routes.draw do
 
   resources :users
   resources :organizations
+  get "/pages/:action", to: "pages", as: "show_page"
 
   root :to => 'pages#home'
   # The priority is based upon order of creation:
