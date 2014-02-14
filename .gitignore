@@ -13,3 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore developer environment artifacts
+.powrc
+.rvmrc
+.DS_Store
