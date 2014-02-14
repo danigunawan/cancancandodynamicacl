@@ -10,11 +10,14 @@
 
 <div>
   <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: 'delete' %>
+         Logged in as <strong><%= current_user.email %></strong>, <%= link_to "Sign Out", destroy_user_session_path, method: 'delete' %> | Roles: <%= current_user.roles.map(&:name).join(', ') %>
   <% else %>
     <%= link_to "Sign In", new_user_session_path %>
   <% end %>
 </div>
+
+<hr />
+
 <%= yield %>
 
 </body>
