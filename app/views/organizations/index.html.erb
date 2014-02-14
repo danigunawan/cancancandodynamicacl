@@ -1,0 +1,8 @@
+<% if @organizations.length > 0 %>
+<ul>
+<% @organizations.each do |organization| %>
+  <li><%= link_to organization.name, organization %></li>
+<% end %>
+</ul>
+<% end %>
+
