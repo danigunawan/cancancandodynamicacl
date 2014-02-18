@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214224907) do
+ActiveRecord::Schema.define(:version => 20140214231220) do
+
+  create_table "authorized_collaborators", :force => true do |t|
+    t.integer  "authorizable_id"
+    t.string   "authorizable_type"
+    t.integer  "accessible_id"
+    t.string   "accessible_type"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "organizations", :force => true do |t|
     t.string   "name"
