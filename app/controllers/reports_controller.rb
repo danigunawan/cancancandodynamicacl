@@ -11,6 +11,6 @@ class ReportsController < ApplicationController
 
   private
   def authorized_to_view_report?
-    authorize! :read, "report_#{params[:id]}".to_sym
+    authorize! :read, "report_#{params[:id]}".to_sym unless can? :read, :admin
   end
 end
