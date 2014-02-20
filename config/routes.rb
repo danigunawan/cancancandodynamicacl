@@ -6,6 +6,8 @@ Cancancandodynamicacl::Application.routes.draw do
   resources :reports
   get "/pages/:action", to: "pages", as: "show_page"
 
+  mount AwesomestAPI => '/api'
+
   root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
