@@ -24,6 +24,7 @@ class AwesomestAPI < Grape::API
     get "/:id" do
       @report = Report.find(params[:id])
       Ability.new(current_user).authorize! :read, @report unless Ability.new(current_user).can? :read, :admin
+      @report
     end
   end
 end
