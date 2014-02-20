@@ -7,13 +7,17 @@ class Ability
       can :read, :admin
     end
 
+    can :read, Report do |report|
+      accessible_report_ids(user).include? report.id
+    end
+
     # Meta Program Report Authorizations
     # This should probably be cached within the session
     # and invalidated somehow when the AuthorizedCollaborator
     # is updated in scope to this Organization.
-    accessible_report_ids(user).each do |id|
-      can :read, "report_#{id}".to_sym
-    end
+    # accessible_report_ids(user).each do |id|
+    #   can :read, "report_#{id}".to_sym
+    # end
   end
 
   private
