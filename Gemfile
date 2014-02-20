@@ -15,6 +15,9 @@ gem 'devise', '~> 2.2.0'
 gem 'rolify'
 gem 'cancan'
 
+
+gem 'grape', '~> 0.2'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
