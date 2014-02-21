@@ -44,7 +44,7 @@ as you see fit.
 @report.collaborators.create(accessible_type: 'User', accessible_id: @user.id)
 ```
 
-Then through the UI you should receive a 500 for any report you did not give
+Then through the UI you should receive an alert for any report you did not give
 access to. (I assume you know how to spin up the rails server).
 
 I suggest trying this out with a few scenarios:
