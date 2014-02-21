@@ -2,6 +2,13 @@ class AwesomestAPI < Grape::API
   version "v1"
   format :json
 
+  rescue_from CanCan::AccessDenied do |exception|
+    Rack::Response.new({
+      status: "error",
+      message: exception.message
+    }.to_json)
+  end
+
   helpers do
     def current_user
       env['warden'].user
